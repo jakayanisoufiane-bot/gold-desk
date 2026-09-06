@@ -787,7 +787,7 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
       <div class="side-brand-mark">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
       </div>
-      <div class="side-brand-name">Gold Desk<em>v3.9</em></div>
+      <div class="side-brand-name">Gold Desk<em>v3.10</em></div>
     </div>
     <button class="side-item active" data-page="journal">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
@@ -1150,7 +1150,7 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
       <input id="io-mt5-file" type="file" accept=".csv,.txt,.htm,.html,text/csv,text/html" hidden>
       <span class="io-hint">MT5 → History → Report (CSV or HTML) · or run the GoldDeskSync EA for automatic sync</span>
     </div>
-    <div class="footer-brand">GOLD DESK · v3.9 · <span id="save-mode">saved in this browser</span></div>
+    <div class="footer-brand">GOLD DESK · v3.10 · <span id="save-mode">saved in this browser</span></div>
   </main>
 </div>
 
@@ -1316,14 +1316,14 @@ async function mt5Fetch(silent){
   try{const r=await fetch(SB_MT5+"?code=eq."+encodeURIComponent(syncCode)+"&select=ticket,data&order=created_at.asc&limit=1000",{headers:sbHeaders()});if(!r.ok)throw new Error("HTTP "+r.status);rows=await r.json();}
   catch(e){if(!silent)toast("Can't reach the MT5 inbox");return 0;}
   if(!Array.isArray(rows)||!rows.length)return 0;
-  const have=new Set(state.trades.map(t=>t.ticket?"tk:"+String(t.ticket):t.id));
+  const seen=knownTrades();
   const fresh=[];
   for(const row of rows){
     const t=row&&row.data;if(!t||typeof t!=="object")continue;
-    const tk=t.ticket?"tk:"+String(t.ticket):t.id;
-    if(have.has(tk))continue;
-    if(state.trades.some(x=>x.id===t.id))continue;
-    have.add(tk);fresh.push(t);
+    if(isDuplicate(t,seen))continue;
+    if(t.ticket)seen.tk.add("tk:"+String(t.ticket));
+    seen.tk.add(t.id);seen.fp.add(tradeKey(t));
+    fresh.push(t);
   }
   if(!fresh.length)return 0;
   fresh.forEach(t=>state.trades.unshift(t));
@@ -1545,6 +1545,20 @@ function clearDay(){selectedDay=null;render();}window.clearDay=clearDay;
 /* ─── display mode (USD / % / R) ─── */
 let displayMode="usd";
 function seedVal(){return isFinite(state.settings.seed)?state.settings.seed:500;}
+function tradeKey(t){
+  const n=(v,d)=>(typeof v==="number"&&isFinite(v))?v.toFixed(d):"";
+  return [t.date||"",t.dir||"",(t.symbol||"").toUpperCase(),n(t.lot,2),n(t.pnl,2),n(t.entry,2)].join("|");
+}
+function knownTrades(){
+  const tk=new Set(),fp=new Set();
+  for(const t of state.trades){ if(t.ticket)tk.add("tk:"+String(t.ticket)); tk.add(t.id); fp.add(tradeKey(t)); }
+  return{tk,fp};
+}
+function isDuplicate(t,seen){
+  if(t.ticket&&seen.tk.has("tk:"+String(t.ticket)))return true;
+  if(seen.tk.has(t.id))return true;
+  return seen.fp.has(tradeKey(t));
+}
 function tradeR(t){if(typeof t.r==="number"&&t.r!==0)return t.r;if(isFinite(t.riskAmt)&&t.riskAmt>0)return (t.pnl||0)/t.riskAmt;if(isFinite(t.risk)&&t.risk>0)return (t.pnl||0)/t.risk;return null;}
 function fmtVal(usd,rSum,dp=2){
   if(displayMode==="pct")return (usd>=0?"+":"")+fmtNum(usd/seedVal()*100,dp)+"%";
@@ -1870,8 +1884,9 @@ async function importMT5(file){
   if(res.error){toast(res.error);alert(res.error);return;}
   const parsed=res.trades;
   if(!parsed.length){toast("No closed trades found in that file");return;}
-  const have=new Set(state.trades.map(t=>t.ticket?"tk:"+t.ticket:t.id));
-  const fresh=parsed.filter(t=>!have.has(t.ticket?"tk:"+t.ticket:t.id)&&!state.trades.some(x=>x.id===t.id));
+  const seen=knownTrades();
+  const fresh=[];
+  for(const t of parsed){ if(isDuplicate(t,seen))continue; if(t.ticket)seen.tk.add("tk:"+String(t.ticket)); seen.tk.add(t.id); seen.fp.add(tradeKey(t)); fresh.push(t); }
   const dup=parsed.length-fresh.length;
   if(!fresh.length){toast(`All ${parsed.length} trades are already in your journal`);return;}
   const net=fresh.reduce((s,t)=>s+t.pnl,0);
