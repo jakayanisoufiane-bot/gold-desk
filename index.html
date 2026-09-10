@@ -683,6 +683,31 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;b
 button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
 
 
+/* ─── FIRST-VISIT WELCOME (v3.16) ─── */
+.welcome{
+  background:linear-gradient(135deg,var(--surface) 0%,rgba(0,184,150,.03) 100%);
+  border:1px solid var(--border);border-radius:12px;
+  padding:24px 26px;margin-bottom:20px;
+}
+.welcome h2{margin:0 0 6px;font-size:18px;font-weight:600;letter-spacing:-0.02em;color:var(--ink)}
+.welcome>p{margin:0;font-size:12.5px;color:var(--ink-2)}
+.welcome-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.wc{display:flex;gap:12px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:16px}
+.wc-n{
+  width:22px;height:22px;flex-shrink:0;border-radius:50%;
+  background:var(--mint-soft);color:var(--mint);
+  display:grid;place-items:center;font-size:11px;font-weight:700;
+  font-family:"JetBrains Mono",monospace;
+}
+.wc-b{display:flex;flex-direction:column;gap:6px;align-items:flex-start;min-width:0}
+.wc-b strong{font-size:13px;font-weight:600;color:var(--ink)}
+.wc-b span{font-size:11.5px;color:var(--ink-3);line-height:1.55}
+.wc-b em{font-style:normal;color:var(--ink-2)}
+.wc-b .btn{margin-top:4px}
+.welcome-foot{margin-top:16px!important;padding-top:14px;border-top:1px solid var(--border);font-size:11px;color:var(--ink-3)}
+.welcome-foot strong{color:var(--mint)}
+@media(max-width:760px){.welcome-cards{grid-template-columns:1fr}}
+
 /* ─── MOBILE POLISH (v3.8) ─── */
 @media(max-width:640px){
   html{-webkit-text-size-adjust:100%}
@@ -704,6 +729,11 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
   .sparkline{max-width:130px}
   .sparkline svg{width:100%;height:auto;display:block}
 
+  .welcome{padding:18px 15px;margin-bottom:14px}
+  .welcome h2{font-size:16px}
+  .welcome-cards{gap:10px;margin-top:14px}
+  .wc{padding:13px}
+  .wc-b .btn{width:100%;justify-content:center}
   .card{padding:16px 14px;margin-bottom:14px}
   .card-h{margin-bottom:14px;gap:10px}
   .card-title strong{font-size:13px;margin-right:6px}
@@ -787,7 +817,7 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
       <div class="side-brand-mark">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
       </div>
-      <div class="side-brand-name">Gold Desk<em>v3.15</em></div>
+      <div class="side-brand-name">Gold Desk<em>v3.16</em></div>
     </div>
     <button class="side-item active" data-page="journal">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
@@ -840,6 +870,31 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
 
     <!-- ============ PAGE: JOURNAL ============ -->
     <section class="page active" id="page-journal">
+
+      <!-- First-visit welcome (v3.16) — hidden as soon as the journal has a trade -->
+      <div class="welcome" id="welcome" hidden>
+        <h2>Welcome to your trading journal.</h2>
+        <p>It's free, it saves in this browser, and there is nothing to sign up for. Two ways to fill it:</p>
+        <div class="welcome-cards">
+          <div class="wc">
+            <div class="wc-n">1</div>
+            <div class="wc-b">
+              <strong>Log your trades by hand</strong>
+              <span>Direction, outcome, P&amp;L. About 30 seconds after each trade — and that's the part that actually makes a journal work.</span>
+              <button class="btn mint" id="wc-add" type="button">+ Log a trade</button>
+            </div>
+          </div>
+          <div class="wc">
+            <div class="wc-n">2</div>
+            <div class="wc-b">
+              <strong>Or import your history</strong>
+              <span>MT5 / MT4 on a computer: <em>Toolbox → History → right-click → Report → XLSX or HTML</em>. Broker portal: the Closed Trades Report in CSV or Excel. A PDF report contains no trades — no import can read one.</span>
+              <label class="btn" for="io-mt5-file">⇪ Import my history</label>
+            </div>
+          </div>
+        </div>
+        <p class="welcome-foot">Trading on your phone too? Turn on <strong>Sync</strong> in the menu, note the code, type it on the other device — same journal, no account.</p>
+      </div>
 
       <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px">
         <div class="mode" id="mode">
@@ -1151,7 +1206,7 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
       <input id="io-mt5-file" type="file" accept=".csv,.txt,.htm,.html,.xlsx,.xlsm,text/csv,text/html" hidden>
       <span class="io-hint">Broker portal → Closed Trades Report (CSV) · or MT5 → History → Report (XLSX / HTML) · PDF has no trades in it</span>
     </div>
-    <div class="footer-brand">GOLD DESK · v3.15 · <span id="save-mode">saved in this browser</span></div>
+    <div class="footer-brand">GOLD DESK · v3.16 · <span id="save-mode">saved in this browser</span></div>
   </main>
 </div>
 
@@ -1716,7 +1771,11 @@ function renderRules(){
   if(b)b.textContent=fmtMoney(r);
   if(c)c.textContent=fmtMoney(r*2);
 }
-function render(){renderCalc();renderBalance();renderRules();renderCalendar();renderStats();renderJournal();renderSparkline();renderKpis();renderEval();renderCharts();renderEquityBig();}
+function renderWelcome(){
+  const el=$("welcome");if(!el)return;
+  el.hidden = state.trades.length>0;
+}
+function render(){renderWelcome();renderCalc();renderBalance();renderRules();renderCalendar();renderStats();renderJournal();renderSparkline();renderKpis();renderEval();renderCharts();renderEquityBig();}
 
 /* ─── page nav ─── */
 function switchPage(name){
@@ -2092,6 +2151,7 @@ function bindEvents(){
   $("modal-apply").addEventListener("click",async()=>{const t=$("modal-textarea").value.trim();if(!t){toast("Nothing to import");return;}closeModal();await applyImportJSON(t);});
   document.querySelectorAll(".side-item[data-page]").forEach(x=>{x.addEventListener("click",()=>switchPage(x.dataset.page));});
   $("btn-add-trade").addEventListener("click",openAddTrade);
+  $("wc-add").addEventListener("click",openAddTrade);
   $("at-cancel").addEventListener("click",closeAddTrade);
   $("at-close-x").addEventListener("click",closeAddTrade);
   $("at-modal").addEventListener("click",(e)=>{if(e.target===$("at-modal"))closeAddTrade();});
