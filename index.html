@@ -807,6 +807,91 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
   .field input,.field select,.m-textarea{font-size:16px}
 }
 
+
+/* ─── v3.17 · accounts, psychology, discipline ─── */
+.acct-bar{display:flex;align-items:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.acct-sel{height:30px;border-radius:7px;background:var(--surface);border:1px solid var(--border-2);color:var(--ink);font:600 12px "Inter",sans-serif;padding:0 8px;cursor:pointer;max-width:240px;min-width:0}
+.acct-sel:focus{outline:none;border-color:var(--mint)}
+.acct-tag{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:5px;background:var(--amber-soft);color:var(--amber)}
+.alerts:empty{display:none}
+.alerts{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.alert{display:flex;gap:10px 14px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:11px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);font-size:12.5px;color:var(--ink-2);line-height:1.45}
+.alert strong{color:var(--ink)}
+.alert.warn{border-color:rgba(226,142,59,.40);background:var(--amber-soft)}
+.alert.stop{border-color:rgba(229,62,95,.45);background:var(--rose-soft)}
+.alert.stop strong{color:var(--rose)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 11.5px "Inter",sans-serif;padding:6px 11px;border-radius:999px;border:1px solid var(--border-2);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:background 120ms,border-color 120ms,color 120ms}
+.chip:hover{border-color:var(--border-hover);color:var(--ink)}
+.chip.on{background:var(--mint-soft);border-color:var(--mint);color:var(--mint)}
+.chips.bad .chip.on{background:var(--rose-soft);border-color:var(--rose);color:var(--rose)}
+.psy{padding:14px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2);display:flex;flex-direction:column;gap:12px}
+.psy-h{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--mint);text-transform:uppercase}
+.psy-sub{font-size:11px;color:var(--ink-3);margin-top:-6px;line-height:1.45}
+.at-b.plan-y.active{background:var(--mint-soft);color:var(--mint)}
+.at-b.plan-n.active{background:var(--rose-soft);color:var(--rose)}
+.rng{display:flex;align-items:center;gap:10px}
+.rng .at-lbl-mini{margin:0;min-width:84px}
+.rng input[type=range]{flex:1;accent-color:var(--mint);min-width:0}
+.rng output{min-width:26px;text-align:right;font:600 13px "JetBrains Mono",monospace;color:var(--ink)}
+#at-modal .m-card,#acct-modal .m-card{overflow-y:auto;overscroll-behavior:contain}
+.plan-dot{display:inline-block;width:14px;font-weight:700;margin-right:4px;text-align:center}
+.plan-dot.y{color:var(--mint)}.plan-dot.n{color:var(--rose)}.plan-dot.u{color:var(--ink-4)}
+.dk-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:6px 0 14px}
+.dk-top h2{margin:0;font-size:15px;font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
+.dk-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-bottom:20px}
+.dk-grid>.card{margin-bottom:0}
+.dk-diag{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.dk-diag li{font-size:13px;line-height:1.55;color:var(--ink-2);padding-left:16px;position:relative}
+.dk-diag li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--mint)}
+.dk-diag li.bad::before{background:var(--rose)}
+.dk-diag b{color:var(--ink);font-weight:600}
+.dk-row{display:grid;grid-template-columns:minmax(0,1.5fr) 38px minmax(0,1.3fr) 88px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:12.5px}
+.dk-row:last-child{border-bottom:none}
+.dk-row.thin{opacity:.5}
+.dk-row .k{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dk-row .n{color:var(--ink-3);text-align:right;font:500 11px "JetBrains Mono",monospace}
+.dk-row .v{text-align:right;font:600 12px "JetBrains Mono",monospace}
+.dk-row .v.mint{color:var(--mint)}.dk-row .v.rose{color:var(--rose)}
+.dk-bar{display:flex;align-items:center;gap:8px}
+.dk-bar i{flex:1;height:7px;border-radius:4px;background:var(--rose-soft);overflow:hidden;display:block;position:relative}
+.dk-bar i b{position:absolute;inset:0 auto 0 0;background:var(--mint);border-radius:4px}
+.dk-bar i.cost{background:var(--surface-3)}
+.dk-bar i.cost b{background:var(--rose)}
+.dk-bar span{font:600 11px "JetBrains Mono",monospace;color:var(--ink-2);min-width:34px;text-align:right}
+.dk-grp{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;margin:16px 0 2px}
+.dk-grp:first-child{margin-top:0}
+.dk-head{display:grid;grid-template-columns:minmax(0,1.5fr) 38px minmax(0,1.3fr) 88px;gap:10px;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);font-weight:600;padding-bottom:4px}
+.dk-head span:nth-child(2),.dk-head span:nth-child(4){text-align:right}
+.dk-empty{font-size:12px;color:var(--ink-3);padding:6px 0;line-height:1.5}
+.ut-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:12.5px}
+.ut-row:last-child{border-bottom:none}
+.ut-row .d{font:500 11px "JetBrains Mono",monospace;color:var(--ink-3);min-width:78px}
+.ut-row .s{flex:1;min-width:0;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ut-row .p{font:600 12px "JetBrains Mono",monospace;min-width:70px;text-align:right}
+.ci-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 20px}
+.ci-strip{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:4px;margin-top:4px}
+.ci-strip div{display:flex;flex-direction:column;align-items:center;gap:3px;font:500 9px "JetBrains Mono",monospace;color:var(--ink-4)}
+.ci-strip i{display:block;width:100%;max-width:22px;aspect-ratio:1;border-radius:5px;border:1px solid var(--border-2);background:transparent}
+.ci-strip i.ok{background:var(--mint);border-color:var(--mint)}
+.ci-strip i.flag{background:var(--amber);border-color:var(--amber)}
+.ci-strip div.today{color:var(--ink)}
+.ac-row{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) 30px;gap:8px;align-items:end;padding:10px 0;border-bottom:1px solid var(--border)}
+.ac-row .field input,.ac-row .field select{padding:7px 8px}
+.ac-kind{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+@media(max-width:900px){.dk-grid{grid-template-columns:1fr}}
+@media(max-width:640px){
+  .dk-grid{gap:14px;margin-bottom:14px}
+  .ci-grid{grid-template-columns:1fr;gap:10px}
+  .dk-row,.dk-head{grid-template-columns:minmax(0,1.3fr) 30px minmax(0,1fr) 72px;gap:8px;font-size:12px}
+  .dk-bar span{min-width:30px}
+  .ac-row{grid-template-columns:1fr 1fr 30px}
+  .ac-row .ac-name{grid-column:1/-1}
+  .acct-bar{width:100%}
+  .acct-sel{flex:1;max-width:none}
+  .alert .btn{flex:0 0 auto}
+}
+
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
 
@@ -817,11 +902,15 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
       <div class="side-brand-mark">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
       </div>
-      <div class="side-brand-name">Gold Desk<em>v3.16</em></div>
+      <div class="side-brand-name">Gold Desk<em>v3.17</em></div>
     </div>
     <button class="side-item active" data-page="journal">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
       <span class="side-lbl">Journal</span>
+    </button>
+    <button class="side-item" data-page="discipline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>
+      <span class="side-lbl">Discipline</span>
     </button>
     <button class="side-item" data-page="calculator">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M12 10h4M8 14h2M12 14h4M8 18h2M12 18h4"/></svg>
@@ -854,6 +943,11 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
       <div>
         <h1 class="ribbon-title">Trading Journal</h1>
         <p class="ribbon-sub">Discipline. Sizing. Streaks. That's the whole game.</p>
+        <div class="acct-bar">
+          <select id="acct-sel" class="acct-sel" aria-label="Account shown"></select>
+          <span class="acct-tag" id="acct-tag" hidden></span>
+          <button class="btn tiny" id="acct-manage" type="button">Accounts</button>
+        </div>
       </div>
       <div class="ribbon-metrics">
         <div>
@@ -872,6 +966,8 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
     <section class="page active" id="page-journal">
 
       <!-- First-visit welcome (v3.16) — hidden as soon as the journal has a trade -->
+      <div class="alerts" id="jr-alerts"></div>
+
       <div class="welcome" id="welcome" hidden>
         <h2>Welcome to your trading journal.</h2>
         <p>It's free, it saves in this browser, and there is nothing to sign up for. Two ways to fill it:</p>
@@ -1196,6 +1292,74 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
       </div>
     </section>
 
+
+    <!-- ============ PAGE: DISCIPLINE (v3.17) ============ -->
+    <section class="page" id="page-discipline">
+      <div class="card" id="ci-card">
+        <div class="card-h">
+          <h3 class="card-title"><strong>Before you trade</strong>Daily check-in</h3>
+          <span class="mono" id="ci-date" style="font-size:11px;color:var(--ink-3)"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="ci-grid">
+            <div class="rng"><span class="at-lbl-mini">Sleep</span><input type="range" id="ci-sleep" min="1" max="10" step="1" value="6" aria-label="Sleep quality"><output id="ci-sleep-v">6</output></div>
+            <div class="rng"><span class="at-lbl-mini">Energy</span><input type="range" id="ci-energy" min="1" max="10" step="1" value="6" aria-label="Energy"><output id="ci-energy-v">6</output></div>
+            <div class="rng"><span class="at-lbl-mini">Mood</span><input type="range" id="ci-mood" min="1" max="10" step="1" value="6" aria-label="Mood"><output id="ci-mood-v">6</output></div>
+          </div>
+          <div>
+            <div class="at-lbl-mini">Mindset right now</div>
+            <div class="chips" id="ci-mind"></div>
+          </div>
+          <div class="field"><label for="ci-note">Anything weighing on you? <span class="opt">(optional)</span></label><input id="ci-note" type="text" maxlength="200" placeholder="e.g. Phase 2, need 3% more, want it done this week"></div>
+          <div class="alert warn" id="ci-flag" hidden></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px">
+              <div class="at-lbl-mini">Last 14 days</div>
+              <div class="ci-strip" id="ci-strip"></div>
+            </div>
+            <button class="btn mint" id="ci-save" type="button">Save check-in</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dk-top">
+        <h2 id="dk-title">Your discipline</h2>
+        <div class="scope" id="dk-scope"><button type="button" data-dk="30" class="active">Last 30 days</button><button type="button" data-dk="all">All time</button></div>
+      </div>
+
+      <div class="kpis" id="dk-kpis">
+        <div class="kpi"><div><div class="kpi-k">Followed the plan</div><div class="kpi-v" id="dk-rate">—</div><div class="kpi-sub" id="dk-rate-sub">no tagged trades yet</div></div></div>
+        <div class="kpi"><div><div class="kpi-k">In-plan trades</div><div class="kpi-v" id="dk-in">—</div><div class="kpi-sub" id="dk-in-sub">—</div></div></div>
+        <div class="kpi"><div><div class="kpi-k">Out-of-plan trades</div><div class="kpi-v" id="dk-out">—</div><div class="kpi-sub" id="dk-out-sub">cost of breaking the plan</div></div></div>
+        <div class="kpi"><div><div class="kpi-k">In-plan streak</div><div class="kpi-v" id="dk-streak">—</div><div class="kpi-sub" id="dk-streak-sub">—</div></div></div>
+      </div>
+
+      <div class="dk-grid">
+        <div class="card">
+          <div class="card-h"><h3 class="card-title"><strong>Diagnosis</strong>What the data says</h3></div>
+          <ul class="dk-diag" id="dk-diag"></ul>
+        </div>
+        <div class="card">
+          <div class="card-h"><h3 class="card-title"><strong>Where it breaks</strong>Mistakes by frequency</h3></div>
+          <div id="dk-errs"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h"><h3 class="card-title"><strong>Triggers</strong>When do you leave the plan?</h3></div>
+        <div class="dk-head"><span>Situation</span><span>n</span><span>In plan</span><span>Net</span></div>
+        <div id="dk-trig"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-h">
+          <h3 class="card-title"><strong>To tag</strong><span id="ut-count"></span></h3>
+          <button class="btn tiny ghost" id="ut-skip" type="button" hidden>Skip trades older than 7 days</button>
+        </div>
+        <div id="ut-list"></div>
+      </div>
+    </section>
+
     <!-- FOOTER TOOLBAR -->
     <div class="io-bar">
       <button class="btn" id="io-export" type="button">↓ Export backup</button>
@@ -1206,7 +1370,7 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
       <input id="io-mt5-file" type="file" accept=".csv,.txt,.htm,.html,.xlsx,.xlsm,text/csv,text/html" hidden>
       <span class="io-hint">Broker portal → Closed Trades Report (CSV) · or MT5 → History → Report (XLSX / HTML) · PDF has no trades in it</span>
     </div>
-    <div class="footer-brand">GOLD DESK · v3.16 · <span id="save-mode">saved in this browser</span></div>
+    <div class="footer-brand">GOLD DESK · v3.17 · <span id="save-mode">saved in this browser</span></div>
   </main>
 </div>
 
@@ -1306,6 +1470,44 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
           <select id="at-session"><option value="">—</option><option>Asia</option><option>London</option><option>New York</option><option>Overlap</option></select>
         </div>
       </div>
+      <div class="at-row">
+        <div class="field">
+          <label for="at-acct">Account</label>
+          <select id="at-acct"></select>
+        </div>
+        <div class="field" id="at-phase-f">
+          <label for="at-phase">Phase</label>
+          <select id="at-phase"><option value="">—</option><option value="1">Phase 1</option><option value="2">Phase 2</option><option value="funded">Funded</option></select>
+        </div>
+      </div>
+      <div class="psy" id="at-psy">
+        <div class="psy-h">Psychology</div>
+        <div class="psy-sub">Twenty seconds. This is what turns "I have a psychology problem" into a precise diagnosis.</div>
+        <div>
+          <div class="at-lbl-mini">Did you follow your plan?</div>
+          <div class="at-tg" id="at-plan-group">
+            <button class="at-b plan-y" data-plan="yes" type="button">YES</button>
+            <button class="at-b plan-n" data-plan="no" type="button">NO</button>
+          </div>
+        </div>
+        <div id="at-err-wrap" hidden>
+          <div class="at-lbl-mini">What broke? <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--ink-4)">all that apply</span></div>
+          <div class="chips bad" id="at-errs"></div>
+        </div>
+        <div>
+          <div class="at-lbl-mini">Setup grade</div>
+          <div class="chips" id="at-grade"></div>
+        </div>
+        <div>
+          <div class="at-lbl-mini">Emotion at entry</div>
+          <div class="chips" id="at-emo"></div>
+        </div>
+        <div class="rng" id="at-int-row"><span class="at-lbl-mini">Intensity</span><input type="range" id="at-int" min="1" max="10" step="1" value="3" aria-label="Emotion intensity"><output id="at-int-v">3</output></div>
+        <div class="field">
+          <label for="at-why">What pushed you? <span class="opt">(one sentence)</span></label>
+          <input id="at-why" type="text" maxlength="200" placeholder="e.g. Entered before the M5 break because price was running">
+        </div>
+      </div>
       <button class="at-adv-btn" id="at-adv-btn" type="button">+ Advanced (entry, SL, TP, lot, fees, duration)</button>
       <div class="at-adv" id="at-adv">
         <div class="field"><label for="at-symbol">Symbol</label><input id="at-symbol" type="text" maxlength="16" placeholder="XAUUSD"></div>
@@ -1321,6 +1523,31 @@ button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
         <button class="btn mint" id="at-save" type="button" disabled>Save trade</button>
       </div>
     </div>
+  </div>
+</div>
+
+
+<!-- Accounts modal (v3.17) -->
+<div class="modal" id="acct-modal" role="dialog" aria-modal="true">
+  <div class="m-card">
+    <div class="m-h">
+      <div class="m-title">Accounts</div>
+      <button class="m-close" id="acct-close-x" type="button">×</button>
+    </div>
+    <div class="m-desc">Keep personal and prop firm trades apart. Pick an account at the top of the journal and every stat, the calendar, the capital card and the Discipline page follow it. MT5 file imports go into the account you're viewing. When a challenge moves to the next phase, change its phase here: trades keep the phase they were taken in.</div>
+    <div id="acct-list"></div>
+    <div class="psy">
+      <div class="psy-h">Add an account</div>
+      <div class="field"><label for="ac-name">Name</label><input id="ac-name" type="text" maxlength="40" placeholder="FundingPips 5K #3"></div>
+      <div class="at-row">
+        <div class="field"><label for="ac-kind">Type</label><select id="ac-kind"><option value="prop">Prop firm</option><option value="personal">Personal / broker</option></select></div>
+        <div class="field"><label for="ac-size">Size ($)</label><input id="ac-size" type="number" inputmode="decimal" step="1" placeholder="5000"></div>
+      </div>
+      <div class="field" id="ac-phase-f"><label for="ac-phase">Current phase</label><select id="ac-phase"><option value="1">Phase 1</option><option value="2">Phase 2</option><option value="funded">Funded</option></select></div>
+      <button class="btn mint" id="ac-add" type="button" disabled>Add account</button>
+    </div>
+    <div class="field"><label for="ac-ea">Trades from the GoldDeskSync EA go to</label><select id="ac-ea"></select></div>
+    <div class="m-actions"><button class="btn" id="acct-done" type="button">Done</button></div>
   </div>
 </div>
 
@@ -1382,7 +1609,7 @@ async function mt5Fetch(silent){
     fresh.push(t);
   }
   if(!fresh.length)return 0;
-  fresh.forEach(t=>state.trades.unshift(t));
+  fresh.forEach(t=>{stampAcct(t,state.settings.eaAcct);state.trades.unshift(t);});
   saveLocal();
   if(db){try{for(const t of fresh){const{id,...r}=t;await db.doc("trades/"+id).set(r);}}catch(e){}}
   render();
@@ -1453,10 +1680,10 @@ function renderCalc(){
 
 /* ─── balance ─── */
 function computeBalance(){
-  const seed=isFinite(state.settings.seed)?state.settings.seed:500;
-  const closedPnl=state.trades.filter(t=>t.status==="closed"&&typeof t.pnl==="number").reduce((s,t)=>s+t.pnl,0);
-  const withdrawn=state.adjustments.filter(a=>a.type==="withdraw").reduce((s,a)=>s+(a.amount||0),0);
-  const deposited=state.adjustments.filter(a=>a.type==="deposit").reduce((s,a)=>s+(a.amount||0),0);
+  const seed=seedVal();
+  const closedPnl=VT().filter(t=>t.status==="closed"&&typeof t.pnl==="number").reduce((s,t)=>s+t.pnl,0);
+  const withdrawn=VA().filter(a=>a.type==="withdraw").reduce((s,a)=>s+(a.amount||0),0);
+  const deposited=VA().filter(a=>a.type==="deposit").reduce((s,a)=>s+(a.amount||0),0);
   const equity=seed+closedPnl;
   const account=equity+deposited-withdrawn;
   return{equity,account,pnl:closedPnl,withdrawn,deposited,seed};
@@ -1472,7 +1699,7 @@ function renderBalance(){
   $("eq-deposited").textContent=fmtMoney(deposited);
   $("use-balance").textContent="↙ use in-account balance ("+fmtMoney(account)+")";
   const mv=$("movements");mv.innerHTML="";
-  const list=state.adjustments.slice().sort((a,b)=>{if(b.date===a.date)return(b.createdAt||0)-(a.createdAt||0);return b.date>a.date?1:-1;});
+  const list=VA().slice().sort((a,b)=>{if(b.date===a.date)return(b.createdAt||0)-(a.createdAt||0);return b.date>a.date?1:-1;});
   list.forEach(a=>{
     const row=document.createElement("div");row.className="mv-item";
     const sign=a.type==="withdraw"?"−":"+";
@@ -1482,8 +1709,8 @@ function renderBalance(){
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function ymd(d){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,"0"),dd=String(d.getDate()).padStart(2,"0");return`${y}-${m}-${dd}`;}
-function tradesInMonth(y,m){return state.trades.filter(t=>{if(!t.date)return false;const[yy,mm]=t.date.split("-").map(Number);return yy===y&&(mm-1)===m;});}
-function dayAgg(ds){const l=state.trades.filter(t=>t.date===ds&&t.status==="closed");return{count:l.length,pnl:l.reduce((s,t)=>s+(t.pnl||0),0),r:sumR(l)};}
+function tradesInMonth(y,m){return VT().filter(t=>{if(!t.date)return false;const[yy,mm]=t.date.split("-").map(Number);return yy===y&&(mm-1)===m;});}
+function dayAgg(ds){const l=VT().filter(t=>t.date===ds&&t.status==="closed");return{count:l.length,pnl:l.reduce((s,t)=>s+(t.pnl||0),0),r:sumR(l)};}
 
 /* ─── sparkline (30 days equity curve) ─── */
 function renderSparkline(){
@@ -1495,7 +1722,7 @@ function renderSparkline(){
   for(let i=daysBack;i>=0;i--){
     const d=new Date();d.setDate(d.getDate()-i);
     const ds=ymd(d);
-    const closed=state.trades.filter(t=>t.date===ds&&t.status==="closed");
+    const closed=VT().filter(t=>t.date===ds&&t.status==="closed");
     cum+=closed.reduce((s,t)=>s+(t.pnl||0),0);
     points.push(seed+cum);
   }
@@ -1517,7 +1744,7 @@ function renderCalendar(){
   $("cal-title").textContent=MONTHS_LONG[calMonth]+" "+calYear;
   const ms=$("m-sel");if(!ms.options.length){MONTHS_LONG.forEach((m,i)=>{const o=document.createElement("option");o.value=i;o.textContent=m;ms.appendChild(o);});}
   ms.value=calMonth;
-  const ys=$("y-sel");const years=new Set([today.getFullYear(),calYear]);state.trades.forEach(t=>{if(t.date)years.add(Number(t.date.slice(0,4)));});
+  const ys=$("y-sel");const years=new Set([today.getFullYear(),calYear]);VT().forEach(t=>{if(t.date)years.add(Number(t.date.slice(0,4)));});
   const lo=Math.min(...years)-1,hi=Math.max(...years)+1;
   if(ys.dataset.range!==lo+"-"+hi){ys.innerHTML="";for(let y=lo;y<=hi;y++){const o=document.createElement("option");o.value=y;o.textContent=y;ys.appendChild(o);}ys.dataset.range=lo+"-"+hi;}
   ys.value=calYear;
@@ -1545,7 +1772,7 @@ function renderCalendar(){
 /* ─── stats ─── */
 let statsScope="month";
 function renderStats(){
-  const src=statsScope==="all"?state.trades:tradesInMonth(calYear,calMonth);
+  const src=statsScope==="all"?VT():tradesInMonth(calYear,calMonth);
   $("perf-month").textContent=statsScope==="all"?"All time":MONTHS_LONG[calMonth]+" "+calYear;
   const mt=src.filter(t=>t.status==="closed"&&typeof t.pnl==="number");
   const byDay=new Map();mt.forEach(t=>{byDay.set(t.date,(byDay.get(t.date)||0)+t.pnl);});
@@ -1574,7 +1801,7 @@ function renderStats(){
 
 /* ─── trade table ─── */
 function renderJournal(){
-  let rows=state.trades.slice();
+  let rows=VT().slice();
   if(filter==="open")rows=rows.filter(t=>t.status==="open");
   else if(filter==="closed")rows=rows.filter(t=>t.status==="closed");
   if(selectedDay)rows=rows.filter(t=>t.date===selectedDay);
@@ -1591,7 +1818,7 @@ function renderJournal(){
     const rv=tradeR(t);
     const pnl=t.status==="closed"?`<div class="pnl ${t.pnl>=0?'w':'l'}">${fmtVal(t.pnl,rv)}</div><div class="r-sub">${displayMode==="r"?fmtMoney(t.pnl):(rv===null?"—":(rv>=0?"+":"")+rv.toFixed(2)+"R")}${t.session?" · "+t.session:""}</div>`:`<span style="color:var(--ink-4)">—</span>`;
     const actions=t.status==="open"?`<div class="row-x"><button class="rx-b w" data-close="win" data-id="${t.id}">TP</button><button class="rx-b l" data-close="loss" data-id="${t.id}">SL</button><button class="rx-b" data-edit="${t.id}" title="Edit">✎</button><button class="rx-b" data-del="${t.id}" title="Delete">×</button></div>`:`<div class="row-x"><button class="rx-b" data-edit="${t.id}" title="Edit">✎</button><button class="rx-b" data-reopen="${t.id}" title="Reopen">↺</button><button class="rx-b" data-del="${t.id}" title="Delete">×</button></div>`;
-    tr.innerHTML=`<td class="mono" style="color:var(--ink-3)">${t.date}</td><td>${t.setup||'—'}</td><td>${dirP}</td><td style="text-align:right">${num(t.entry)}</td><td style="text-align:right">${num(t.sl)}</td><td style="text-align:right">${num(t.tp)}</td><td style="text-align:right">${num(t.lot)}</td><td style="text-align:right">${num(t.rr)}</td><td>${st}</td><td style="text-align:right">${pnl}</td><td>${actions}</td>`;
+    tr.innerHTML=`<td class="mono" style="color:var(--ink-3)">${t.date}</td><td>${planDot(t)}${t.setup||'—'}</td><td>${dirP}</td><td style="text-align:right">${num(t.entry)}</td><td style="text-align:right">${num(t.sl)}</td><td style="text-align:right">${num(t.tp)}</td><td style="text-align:right">${num(t.lot)}</td><td style="text-align:right">${num(t.rr)}</td><td>${st}</td><td style="text-align:right">${pnl}</td><td>${actions}</td>`;
     tbody.appendChild(tr);
   }
 }
@@ -1600,7 +1827,7 @@ function clearDay(){selectedDay=null;render();}window.clearDay=clearDay;
 
 /* ─── display mode (USD / % / R) ─── */
 let displayMode="usd";
-function seedVal(){return isFinite(state.settings.seed)?state.settings.seed:500;}
+function seedVal(){const s=isFinite(state.settings.seed)?state.settings.seed:500;const a=activeAcct();if(a==="main")return s;if(a==="all"){const tot=accounts().reduce((n,x)=>n+(isFinite(x.size)&&x.size>0?x.size:0),0);return tot>0?tot:s;}const ac=acctById(a);return isFinite(ac.size)&&ac.size>0?ac.size:s;}
 function tradeKey(t){
   const n=(v,d)=>(typeof v==="number"&&isFinite(v))?v.toFixed(d):"";
   return [t.date||"",t.dir||"",(t.symbol||"").toUpperCase(),n(t.lot,2),n(t.pnl,2),n(t.entry,2)].join("|");
@@ -1634,7 +1861,7 @@ function fmtVal(usd,rSum,dp=2){
 function sumR(list){let s=0,any=false;for(const t of list){const r=tradeR(t);if(r!==null){s+=r;any=true;}}return any?s:null;}
 
 /* ─── all-time stats ─── */
-function closedTrades(){return state.trades.filter(t=>t.status==="closed"&&typeof t.pnl==="number");}
+function closedTrades(){return VT().filter(t=>t.status==="closed"&&typeof t.pnl==="number");}
 function computeAll(){
   const ct=closedTrades().slice().sort((a,b)=>(a.date===b.date?(a.closedAt||a.createdAt||0)-(b.closedAt||b.createdAt||0):(a.date>b.date?1:-1)));
   const wins=ct.filter(t=>t.pnl>0),losses=ct.filter(t=>t.pnl<0),bes=ct.filter(t=>t.pnl===0);
@@ -1775,7 +2002,7 @@ function renderWelcome(){
   const el=$("welcome");if(!el)return;
   el.hidden = state.trades.length>0;
 }
-function render(){renderWelcome();renderCalc();renderBalance();renderRules();renderCalendar();renderStats();renderJournal();renderSparkline();renderKpis();renderEval();renderCharts();renderEquityBig();}
+function render(){renderAcctBar();renderAlerts();renderWelcome();renderCalc();renderBalance();renderRules();renderCalendar();renderStats();renderJournal();renderSparkline();renderKpis();renderEval();renderCharts();renderEquityBig();renderDiscipline();}
 
 /* ─── page nav ─── */
 function switchPage(name){
@@ -1783,6 +2010,7 @@ function switchPage(name){
   const t=document.getElementById("page-"+name);if(t)t.classList.add("active");
   document.querySelectorAll(".side-item[data-page]").forEach(x=>x.classList.toggle("active",x.dataset.page===name));
   try{localStorage.setItem("golddesk_page",name);}catch(e){}
+  if(name==="discipline")loadCheckin();
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
@@ -1791,7 +2019,7 @@ function openMvForm(type){adjType=type;const l=$("mv-tag");l.textContent=type.to
 function closeMvForm(){$("mv-form").classList.remove("show");}
 function onMvConfirm(){
   const a=parseFloat($("mv-amt").value);if(!isFinite(a)||a<=0)return;
-  const adj={id:"a_"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),date:ymd(new Date()),type:adjType,amount:+a.toFixed(2),note:($("mv-note").value||"").trim(),createdAt:Date.now()};
+  const adj={id:"a_"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),date:ymd(new Date()),type:adjType,amount:+a.toFixed(2),note:($("mv-note").value||"").trim(),createdAt:Date.now(),account:defaultAcct()};
   saveAdj(adj);closeMvForm();
   toast(adjType==="withdraw"?"Withdrawal recorded — "+fmtMoney(a)+" out":"Deposit recorded — "+fmtMoney(a)+" in");
 }
@@ -1806,6 +2034,7 @@ function openAddTrade(){
   $("at-session").value="";
   $("at-risk").value=isFinite(state.settings.account)?(state.settings.account*(state.settings.riskPct||1)/100).toFixed(2):"";
   $("at-date").value=ymd(new Date());
+  psyLoad(null);
   setAdv(false);
   $("at-title").textContent="Add trade";$("at-save").textContent="Save trade";
   $("at-desc").innerHTML='Log a completed trade. Only <strong style="color:var(--ink)">direction</strong>, <strong style="color:var(--ink)">outcome</strong> and <strong style="color:var(--ink)">P&amp;L</strong> are required.';
@@ -1824,12 +2053,14 @@ function openEditTrade(id){
   $("at-risk").value=rk===null?"":rk;
   $("at-session").value=t.session||"";
   $("at-symbol").value=t.symbol||"";
+  psyLoad(t);
   ["lot","entry","sl","tp","fees","dur"].forEach(k=>{const v=t[k];$("at-"+k).value=(typeof v==="number"&&isFinite(v))?v:"";});
   const hasAdv=["lot","entry","sl","tp","dur"].some(k=>typeof t[k]==="number"&&isFinite(t[k]))||(isFinite(t.fees)&&t.fees>0)||!!t.symbol;
   setAdv(hasAdv);
   $("at-title").textContent="Edit trade";$("at-save").textContent="Update trade";
-  $("at-desc").innerHTML=(t.source==="mt5"?'Imported from MT5'+(t.ticket?' \u00b7 order <span class="mono">'+escapeHtml(t.ticket)+'</span>':'')+'. ':'')+'Change anything you like \u2014 the trade keeps its place in the journal.';
-  updateAtSave();$("at-modal").classList.add("show");setTimeout(()=>$("at-pnl").focus(),50);
+  $("at-desc").innerHTML=(t.source==="mt5"?'Imported from MT5'+(t.ticket?' \u00b7 order <span class="mono">'+escapeHtml(t.ticket)+'</span>':'')+'. ':'')+(tagged(t)?'Change anything you like \u2014 the trade keeps its place in the journal.':'Add the psychology tags below \u2014 that is what the Discipline page reads.');
+  updateAtSave();$("at-modal").classList.add("show");
+  if(!tagged(t))setTimeout(()=>{const p=$("at-psy");p.scrollIntoView({block:"start",behavior:"smooth"});},80);else setTimeout(()=>$("at-pnl").focus(),50);
 }
 function closeAddTrade(){$("at-modal").classList.remove("show");}
 function syncAt(){
@@ -1850,7 +2081,7 @@ async function saveAddTrade(){
   let rr=null;if(isFinite(entry)&&isFinite(sl)&&isFinite(tp)){const sd=Math.abs(entry-sl),td=Math.abs(tp-entry);if(sd>0)rr=td/sd;}
   const rVal=(isFinite(riskAmt)&&riskAmt>0)?+(pnl/riskAmt).toFixed(2):(atState.outcome==="win"?(rr||1):atState.outcome==="loss"?-1:0);
   const prev=editingId?state.trades.find(x=>x.id===editingId):null;
-  const trade={id:prev?prev.id:"t_"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),date:$("at-date").value||ymd(new Date()),setup:($("at-setup").value||"").trim()||"—",dir:atState.dir,entry:isFinite(entry)?entry:null,exit:prev?(prev.exit??null):null,sl:isFinite(sl)?sl:null,tp:isFinite(tp)?tp:null,lot:isFinite(lot)?lot:null,risk:(isFinite(riskAmt)&&riskAmt>0)?riskAmt:null,riskAmt:(isFinite(riskAmt)&&riskAmt>0)?riskAmt:null,rr:rr,slPips:null,tpPips:null,riskPct:null,instrument:"xauusd",symbol,session,fees:isFinite(fees)?fees:0,dur:isFinite(dur)&&dur>0?dur:null,status:"closed",pnl:+pnl.toFixed(2),r:(isFinite(riskAmt)&&riskAmt>0)?+(pnl/riskAmt).toFixed(2):null,ticket:prev?(prev.ticket??null):null,source:prev?(prev.source??null):null,createdAt:prev?(prev.createdAt||Date.now()):Date.now(),closedAt:prev?(prev.closedAt||Date.now()):Date.now()};
+  const trade={id:prev?prev.id:"t_"+Date.now().toString(36)+Math.random().toString(36).slice(2,6),date:$("at-date").value||ymd(new Date()),setup:($("at-setup").value||"").trim()||"—",dir:atState.dir,entry:isFinite(entry)?entry:null,exit:prev?(prev.exit??null):null,sl:isFinite(sl)?sl:null,tp:isFinite(tp)?tp:null,lot:isFinite(lot)?lot:null,risk:(isFinite(riskAmt)&&riskAmt>0)?riskAmt:null,riskAmt:(isFinite(riskAmt)&&riskAmt>0)?riskAmt:null,rr:rr,slPips:null,tpPips:null,riskPct:null,instrument:"xauusd",symbol,session,fees:isFinite(fees)?fees:0,dur:isFinite(dur)&&dur>0?dur:null,status:"closed",pnl:+pnl.toFixed(2),r:(isFinite(riskAmt)&&riskAmt>0)?+(pnl/riskAmt).toFixed(2):null,...psyRead(),ticket:prev?(prev.ticket??null):null,psySkip:false,source:prev?(prev.source??null):null,createdAt:prev?(prev.createdAt||Date.now()):Date.now(),closedAt:prev?(prev.closedAt||Date.now()):Date.now()};
   const wasEdit=!!prev;editingId=null;
   await saveTrade(trade);closeAddTrade();
   toast(wasEdit?`Trade updated — ${pnl>=0?'+':''}${fmtMoney(pnl)}`:`Trade logged — ${atState.outcome.toUpperCase()} ${pnl>=0?'+':''}${fmtMoney(pnl)}`);
@@ -2079,8 +2310,8 @@ async function importMT5(file){
   if(!fresh.length){toast(`All ${parsed.length} trades are already in your journal`);return;}
   const net=fresh.reduce((s,t)=>s+t.pnl,0);
   const days=[...new Set(fresh.map(t=>t.date))].sort();
-  if(!confirm(`Import ${fresh.length} trade${fresh.length===1?"":"s"}${dup?` (${dup} already in the journal, skipped)`:""}?\n\n${days[0]} → ${days[days.length-1]}\nNet P&L: ${(net>=0?"+":"")+fmtMoney(net)}\n\nRisk per trade is unknown from MT5, so R multiples stay empty — edit a trade to set them.`))return;
-  fresh.forEach(t=>state.trades.unshift(t));
+  if(!confirm(`Into: ${acctById(defaultAcct()).name}\n\nImport ${fresh.length} trade${fresh.length===1?"":"s"}${dup?` (${dup} already in the journal, skipped)`:""}?\n\n${days[0]} → ${days[days.length-1]}\nNet P&L: ${(net>=0?"+":"")+fmtMoney(net)}\n\nRisk per trade is unknown from MT5, so R multiples stay empty — edit a trade to set them.`))return;
+  fresh.forEach(t=>{stampAcct(t);state.trades.unshift(t);});
   saveLocal();
   if(db){try{for(const t of fresh){const{id,...r}=t;await db.doc("trades/"+id).set(r);}}catch(e){}}
   render();toast(`Imported ${fresh.length} trade${fresh.length===1?"":"s"} from MT5`);
@@ -2089,15 +2320,275 @@ let modalMode=null;
 function openModal({title,desc,text,mode}){modalMode=mode;$("modal-title").textContent=title||"";$("modal-desc").textContent=desc||"";const ta=$("modal-textarea");ta.value=text||"";ta.readOnly=(mode==="export");$("modal-copy").hidden=(mode!=="export");$("modal-apply").hidden=(mode!=="import");$("modal").classList.add("show");if(mode==="export"){ta.focus();ta.select();}else{ta.focus();}}
 function closeModal(){$("modal").classList.remove("show");modalMode=null;}
 
+
+/* ─── v3.17 · accounts, psychology, discipline ─── */
+const ERR_TAGS=[["fomo","FOMO / chased"],["grade","Below B+ setup"],["noconf","No M5 confirmation"],["slmove","Moved / removed SL"],["revenge","Revenge trade"],["size","Oversized lot"],["early","Cut winner early"],["overtrade","Overtrading"],["news","Traded the news"],["rules","Broke a prop rule"]];
+const ERR_LBL=Object.fromEntries(ERR_TAGS);
+const EMOS=["Calm","Confident","Impatient","Fearful","Greedy","Frustrated","Bored","Tired"];
+const MINDS=["Calm","Focused","Rushed","Chasing losses","Overconfident","Tired","Distracted"];
+const RED_MINDS=["Rushed","Chasing losses","Overconfident","Tired"];
+const GRADES=["A+","B+","C","F"];
+const PHASE_LBL={"1":"Phase 1","2":"Phase 2","funded":"Funded"};
+let viewAcct="all",dkScope="30",psy={plan:null,errs:new Set(),grade:null,emo:null},ciMind=null;
+try{viewAcct=localStorage.getItem("golddesk_acct")||"all";dkScope=localStorage.getItem("golddesk_dk")==="all"?"all":"30";}catch(e){}
+
+function accounts(){const s=state.settings;const extra=Array.isArray(s.accounts)?s.accounts.filter(a=>a&&a.id&&a.id!=="main"):[];return[{id:"main",name:s.mainName||"Personal",kind:"personal",size:isFinite(s.seed)?s.seed:500}].concat(extra);}
+function acctById(id){const l=accounts();return l.find(a=>a.id===id)||l[0];}
+function activeAcct(){if(viewAcct==="all")return"all";return accounts().some(a=>a.id===viewAcct)?viewAcct:"all";}
+function tAcct(t){return t&&t.account?t.account:"main";}
+function VT(){const a=activeAcct();return a==="all"?state.trades:state.trades.filter(t=>tAcct(t)===a);}
+function VA(){const a=activeAcct();return a==="all"?state.adjustments:state.adjustments.filter(x=>(x.account||"main")===a);}
+function defaultAcct(){const a=activeAcct();return a==="all"?"main":a;}
+function seedIsMain(){const a=activeAcct();return a==="main"||(a==="all"&&accounts().length===1);}
+function stampAcct(t,id){const ac=acctById(id||defaultAcct());t.account=ac.id;if(ac.kind==="prop"&&ac.phase&&!t.phase)t.phase=ac.phase;return t;}
+function setView(id){viewAcct=id||"all";try{localStorage.setItem("golddesk_acct",viewAcct);}catch(e){}selectedDay=null;render();}
+function tagged(t){return t.plan===true||t.plan===false;}
+function needsTag(t){return t.status==="closed"&&typeof t.pnl==="number"&&!tagged(t)&&!t.psySkip;}
+function planDot(t){if(t.plan===true)return'<span class="plan-dot y" title="Followed the plan">✓</span>';if(t.plan===false)return'<span class="plan-dot n" title="Out of plan: '+escapeHtml((t.errors||[]).map(e=>ERR_LBL[e]||e).join(", ")||"no tag")+'">✗</span>';return t.status==="closed"?'<span class="plan-dot u" title="No psychology tag yet">·</span>':"";}
+
+function renderAcctBar(){
+  const sel=$("acct-sel");if(!sel)return;
+  const list=accounts(),a=activeAcct();
+  sel.innerHTML=(list.length>1?'<option value="all">All accounts</option>':"")+list.map(x=>`<option value="${escapeHtml(x.id)}">${escapeHtml(x.name)}${x.kind==="prop"&&isFinite(x.size)?" · "+fmtMoney(x.size,0):""}</option>`).join("");
+  sel.value=list.length>1?a:"main";
+  const ac=a==="all"?null:acctById(a),tag=$("acct-tag");
+  if(ac&&ac.kind==="prop"){tag.hidden=false;tag.textContent=PHASE_LBL[ac.phase]||"Prop";}else tag.hidden=true;
+  const si=$("seed-input");if(si){si.readOnly=(a==="all"&&list.length>1);si.title=si.readOnly?"Pick one account to edit its starting capital":"";if(document.activeElement!==si)si.value=seedVal();}
+}
+
+/* accounts modal */
+function openAccounts(){renderAcctModal();$("ac-name").value="";$("ac-size").value="";$("ac-kind").value="prop";$("ac-phase").value="1";acFormSync();$("acct-modal").classList.add("show");}
+function closeAccounts(){$("acct-modal").classList.remove("show");}
+function acFormSync(){$("ac-phase-f").hidden=$("ac-kind").value!=="prop";$("ac-add").disabled=!($("ac-name").value.trim()&&parseFloat($("ac-size").value)>0);}
+function renderAcctModal(){
+  const box=$("acct-list");const list=accounts();
+  box.innerHTML=list.map(a=>{
+    const n=state.trades.filter(t=>tAcct(t)===a.id).length;
+    const phase=a.kind==="prop"?`<div class="field"><label>Phase</label><select data-ac="${a.id}" data-k="phase">${Object.entries(PHASE_LBL).map(([k,v])=>`<option value="${k}"${a.phase===k?" selected":""}>${v}</option>`).join("")}</select></div>`:`<div class="field"><label>&nbsp;</label><div class="ac-kind" style="padding:9px 0">${a.id==="main"?"Main":"Personal"} · ${n} trade${n===1?"":"s"}</div></div>`;
+    return`<div class="ac-row"><div class="field ac-name"><label>${a.kind==="prop"?"Prop firm":"Personal"}${a.kind==="prop"?" · "+n+" trade"+(n===1?"":"s"):""}</label><input data-ac="${a.id}" data-k="name" type="text" maxlength="40" value="${escapeHtml(a.name)}"></div><div class="field"><label>Size ($)</label><input data-ac="${a.id}" data-k="size" type="number" inputmode="decimal" step="1" value="${isFinite(a.size)?a.size:""}"></div>${phase}${a.id==="main"?"<span></span>":`<button class="btn tiny ghost rose" data-ac-del="${a.id}" type="button" title="Delete account" style="height:32px">×</button>`}</div>`;
+  }).join("");
+  const ea=$("ac-ea");ea.innerHTML=list.map(a=>`<option value="${escapeHtml(a.id)}">${escapeHtml(a.name)}</option>`).join("");ea.value=acctById(state.settings.eaAcct||"main").id;
+}
+function acctEdit(id,k,v){
+  if(id==="main"){if(k==="name")state.settings.mainName=v.trim()||"Personal";if(k==="size"){const n=parseFloat(v);if(isFinite(n)&&n>=0){state.settings.seed=n;state.settings.account=n;$("account").value=n;}}}
+  else{const l=(state.settings.accounts||[]).slice();const i=l.findIndex(a=>a.id===id);if(i<0)return;const a=Object.assign({},l[i]);
+    if(k==="name")a.name=v.trim()||a.name;if(k==="size"){const n=parseFloat(v);if(isFinite(n)&&n>0)a.size=n;}if(k==="phase")a.phase=v;l[i]=a;state.settings.accounts=l;}
+  saveSettings();render();
+}
+function acctAdd(){
+  const name=$("ac-name").value.trim(),size=parseFloat($("ac-size").value),kind=$("ac-kind").value;
+  if(!name||!(size>0))return;
+  const a={id:"ac_"+Date.now().toString(36)+Math.random().toString(36).slice(2,5),name,kind,size,phase:kind==="prop"?$("ac-phase").value:null,createdAt:Date.now()};
+  state.settings.accounts=(state.settings.accounts||[]).concat([a]);
+  saveSettings();viewAcct=a.id;try{localStorage.setItem("golddesk_acct",a.id);}catch(e){}
+  renderAcctModal();$("ac-name").value="";$("ac-size").value="";acFormSync();render();
+  toast(`${name} added — you're now viewing it`);
+}
+async function acctDelete(id){
+  const a=acctById(id);if(!a||a.id==="main")return;
+  const tr=state.trades.filter(t=>tAcct(t)===id),ad=state.adjustments.filter(x=>x.account===id);
+  if(!confirm(`Delete the account "${a.name}"?`+(tr.length||ad.length?`\n\nIts ${tr.length} trade${tr.length===1?"":"s"}${ad.length?` and ${ad.length} cash movement${ad.length===1?"":"s"}`:""} will move to ${acctById("main").name}, nothing is erased.`:"")))return;
+  tr.forEach(t=>{t.account="main";});ad.forEach(x=>{x.account="main";});
+  state.settings.accounts=(state.settings.accounts||[]).filter(x=>x.id!==id);
+  if(state.settings.eaAcct===id)state.settings.eaAcct="main";
+  if(viewAcct===id){viewAcct="all";try{localStorage.setItem("golddesk_acct","all");}catch(e){}}
+  saveLocal();
+  if(db){try{await db.doc("settings/main").set(state.settings);for(const t of tr){const{id:i,...r}=t;await db.doc("trades/"+i).set(r);}for(const x of ad){const{id:i,...r}=x;await db.doc("adjustments/"+i).set(r);}}catch(e){}}
+  renderAcctModal();render();toast("Account deleted");
+}
+
+/* trade modal — account + psychology */
+function chipsHTML(list,on,attr){return list.map(([v,l])=>`<button class="chip${on(v)?" on":""}" type="button" data-${attr}="${escapeHtml(v)}">${escapeHtml(l)}</button>`).join("");}
+function psyRender(){
+  document.querySelectorAll("#at-plan-group .at-b").forEach(b=>b.classList.toggle("active",(b.dataset.plan==="yes"&&psy.plan===true)||(b.dataset.plan==="no"&&psy.plan===false)));
+  $("at-err-wrap").hidden=psy.plan!==false;
+  $("at-errs").innerHTML=chipsHTML(ERR_TAGS,v=>psy.errs.has(v),"err");
+  $("at-grade").innerHTML=chipsHTML(GRADES.map(g=>[g,g]),v=>psy.grade===v,"grade");
+  $("at-emo").innerHTML=chipsHTML(EMOS.map(e=>[e,e]),v=>psy.emo===v,"emo");
+  $("at-int-row").style.opacity=psy.emo?"1":".45";$("at-int-v").textContent=$("at-int").value;
+}
+function atAcctSync(keepPhase){const ac=acctById($("at-acct").value);const prop=ac.kind==="prop";$("at-phase-f").style.visibility=prop?"visible":"hidden";if(!keepPhase)$("at-phase").value=prop?(ac.phase||""):"";}
+function psyLoad(t){
+  const list=accounts();
+  $("at-acct").innerHTML=list.map(a=>`<option value="${escapeHtml(a.id)}">${escapeHtml(a.name)}</option>`).join("");
+  $("at-acct").value=t?acctById(tAcct(t)).id:defaultAcct();
+  if(t){$("at-phase").value=t.phase||"";atAcctSync(true);}else atAcctSync(false);
+  psy={plan:t&&tagged(t)?t.plan:null,errs:new Set(t&&Array.isArray(t.errors)?t.errors:[]),grade:t?t.grade||null:null,emo:t?t.emotion||null:null};
+  $("at-int").value=t&&isFinite(t.intensity)?t.intensity:3;
+  $("at-why").value=t?t.why||"":"";
+  psyRender();
+}
+function psyRead(){
+  const ac=acctById($("at-acct").value);
+  return{account:ac.id,phase:ac.kind==="prop"?($("at-phase").value||null):null,plan:psy.plan,errors:psy.plan===false?[...psy.errs]:[],grade:psy.grade,emotion:psy.emo,intensity:psy.emo?Number($("at-int").value):null,why:($("at-why").value||"").trim()||null};
+}
+
+/* journal alerts */
+function ciFlags(ci){const f=[];if(!ci)return f;if(ci.sleep<=4)f.push("short sleep");if(ci.energy<=3)f.push("low energy");if(ci.mood<=3)f.push("low mood");if(RED_MINDS.includes(ci.mind))f.push(ci.mind.toLowerCase());return f;}
+function renderAlerts(){
+  const el=$("jr-alerts");if(!el)return;
+  if(!state.trades.length){el.innerHTML="";return;}
+  const td=ymd(new Date());
+  const losses=VT().filter(t=>t.date===td&&t.status==="closed"&&t.pnl<0).length;
+  const ci=(state.settings.checkins||{})[td],items=[];
+  if(losses>=2)items.push(`<div class="alert stop"><span><strong>${losses} losses today.</strong> Your rule: two losses and you're done. Close the platform and come back tomorrow.</span></div>`);
+  if(ci){const f=ciFlags(ci);if(f.length)items.push(`<div class="alert warn"><span><strong>Red flag in today's check-in</strong> — ${escapeHtml(f.join(", "))}. A+ setups only, half size, or skip the day.</span></div>`);}
+  else items.push(`<div class="alert"><span><strong>No check-in today.</strong> Thirty seconds before you open a chart.</span><button class="btn tiny mint" data-go="discipline" type="button">Check in</button></div>`);
+  const un=VT().filter(needsTag).length;
+  if(un)items.push(`<div class="alert"><span><strong>${un} trade${un===1?"":"s"}</strong> without psychology tags — the Discipline page can't read ${un===1?"it":"them"}.</span><button class="btn tiny" data-go="discipline" type="button">Tag them</button></div>`);
+  el.innerHTML=items.slice(0,2).join("");
+}
+
+/* daily check-in */
+function ciVals(){return{sleep:Number($("ci-sleep").value),energy:Number($("ci-energy").value),mood:Number($("ci-mood").value),mind:ciMind,note:($("ci-note").value||"").trim()||null};}
+function ciRenderForm(){
+  ["sleep","energy","mood"].forEach(k=>{$("ci-"+k+"-v").textContent=$("ci-"+k).value;});
+  $("ci-mind").innerHTML=chipsHTML(MINDS.map(m=>[m,m]),v=>ciMind===v,"mind");
+  const f=ciFlags(ciVals()),fl=$("ci-flag");
+  if(f.length){fl.hidden=false;fl.innerHTML=`<span><strong>Red flag:</strong> ${escapeHtml(f.join(", "))}. On days like this, decide now: A+ setups only at half size, or no trading.</span>`;}else fl.hidden=true;
+}
+function loadCheckin(){
+  const td=ymd(new Date()),ci=(state.settings.checkins||{})[td];
+  $("ci-date").textContent=td;
+  $("ci-sleep").value=ci?ci.sleep:6;$("ci-energy").value=ci?ci.energy:6;$("ci-mood").value=ci?ci.mood:6;
+  ciMind=ci?ci.mind||null:null;$("ci-note").value=ci?ci.note||"":"";
+  $("ci-save").textContent=ci?"Update check-in":"Save check-in";
+  ciRenderForm();renderCiStrip();
+}
+function renderCiStrip(){
+  const box=$("ci-strip");if(!box)return;const all=state.settings.checkins||{};let h="";
+  for(let i=13;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const k=ymd(d),ci=all[k];const cls=ci?(ciFlags(ci).length?"flag":"ok"):"";h+=`<div class="${i===0?"today":""}" title="${k}${ci?" · sleep "+ci.sleep+", energy "+ci.energy+", mood "+ci.mood+(ci.mind?", "+escapeHtml(ci.mind):""):" · no check-in"}"><i class="${cls}"></i>${d.getDate()}</div>`;}
+  box.innerHTML=h;
+}
+function saveCheckin(){
+  const td=ymd(new Date()),ci=Object.assign(ciVals(),{at:Date.now()});
+  const all=Object.assign({},state.settings.checkins||{},{[td]:ci});
+  const keys=Object.keys(all).sort();while(keys.length>400)delete all[keys.shift()];
+  state.settings.checkins=all;saveSettings();
+  $("ci-save").textContent="Update check-in";renderCiStrip();render();
+  const f=ciFlags(ci);toast(f.length?"Saved — red flag, trade small or not at all":"Check-in saved — trade your plan");
+}
+
+/* discipline analysis */
+function chrono(a,b){return a.date===b.date?((a.closedAt||a.createdAt||0)-(b.closedAt||b.createdAt||0)):(a.date>b.date?1:-1);}
+function dkTrades(){let l=VT().filter(t=>t.status==="closed"&&typeof t.pnl==="number");if(dkScope==="30"){const c=new Date();c.setDate(c.getDate()-30);const cs=ymd(c);l=l.filter(t=>t.date>=cs);}return l.slice().sort(chrono);}
+function withCtx(list){const last=new Map(),cnt=new Map(),cis=state.settings.checkins||{};return list.map(t=>{const k=tAcct(t)+"|"+t.date,p=last.get(k),n=(cnt.get(k)||0)+1;cnt.set(k,n);last.set(k,t);return{t,prev:p?(p.pnl>0?"win":p.pnl<0?"loss":"be"):"first",nth:n,ci:cis[t.date]||null};});}
+function grpStat(xs){const tg=xs.filter(x=>tagged(x.t)),inp=tg.filter(x=>x.t.plan===true).length;return{n:xs.length,tg:tg.length,rate:tg.length?inp/tg.length:null,net:xs.reduce((s,x)=>s+x.t.pnl,0),r:sumR(xs.map(x=>x.t))};}
+function dkRow(label,g,thin){
+  const pct=g.rate===null?null:Math.round(g.rate*100);
+  const bar=pct===null?'<span style="color:var(--ink-4);font-size:11px">untagged</span>':`<div class="dk-bar"><i><b style="width:${pct}%"></b></i><span>${pct}%</span></div>`;
+  return`<div class="dk-row${thin?" thin":""}" title="${thin?"Small sample — read with care":""}"><span class="k">${escapeHtml(label)}</span><span class="n">${g.n}</span>${bar}<span class="v ${g.net>0?"mint":g.net<0?"rose":""}">${fmtVal(g.net,g.r)}</span></div>`;
+}
+function renderDiscipline(){
+  if(!$("dk-kpis"))return;
+  document.querySelectorAll("#dk-scope button").forEach(b=>b.classList.toggle("active",b.dataset.dk===dkScope));
+  const a=activeAcct();$("dk-title").textContent=accounts().length===1?"Your discipline":a==="all"?"Your discipline · all accounts":"Your discipline · "+acctById(a).name;
+  const ctx=withCtx(dkTrades()),tg=ctx.filter(x=>tagged(x.t));
+  const inp=tg.filter(x=>x.t.plan===true),outp=tg.filter(x=>x.t.plan===false);
+  const inNet=inp.reduce((s,x)=>s+x.t.pnl,0),outNet=outp.reduce((s,x)=>s+x.t.pnl,0);
+  const rate=tg.length?inp.length/tg.length:null;
+  // KPIs
+  const kr=$("dk-rate");kr.textContent=rate===null?"—":Math.round(rate*100)+"%";kr.className="kpi-v "+(rate===null?"":rate>=.8?"mint":rate<.6?"rose":"");
+  $("dk-rate-sub").textContent=`${tg.length} of ${ctx.length} trade${ctx.length===1?"":"s"} tagged`;
+  const ki=$("dk-in");ki.textContent=inp.length?fmtVal(inNet,sumR(inp.map(x=>x.t))):"—";ki.className="kpi-v "+(inNet>0?"mint":inNet<0?"rose":"");
+  const wi=inp.filter(x=>x.t.pnl>0).length;$("dk-in-sub").textContent=inp.length?`${inp.length} trade${inp.length===1?"":"s"} · ${Math.round(wi/inp.length*100)}% winners`:"no in-plan trades yet";
+  const ko=$("dk-out");ko.textContent=outp.length?fmtVal(outNet,sumR(outp.map(x=>x.t))):"—";ko.className="kpi-v "+(outNet>0?"mint":outNet<0?"rose":"");
+  $("dk-out-sub").textContent=outp.length?`${outp.length} trade${outp.length===1?"":"s"} · cost of breaking the plan`:"none — keep it that way";
+  const allTg=VT().filter(t=>t.status==="closed"&&tagged(t)).sort(chrono);
+  let cur=0;for(let i=allTg.length-1;i>=0&&allTg[i].plan===true;i--)cur++;
+  let best=0,run=0;allTg.forEach(t=>{run=t.plan===true?run+1:0;if(run>best)best=run;});
+  const ks=$("dk-streak");ks.textContent=allTg.length?String(cur):"—";ks.className="kpi-v "+(cur>=5?"mint":"");
+  $("dk-streak-sub").textContent=allTg.length?`trade${cur===1?"":"s"} in a row · best ${best}`:"tag trades to start one";
+  // errors
+  const em=new Map();outp.forEach(x=>{const es=(x.t.errors&&x.t.errors.length)?x.t.errors:["_none"];es.forEach(e=>{const o=em.get(e)||{n:0,net:0,ts:[]};o.n++;o.net+=x.t.pnl;o.ts.push(x.t);em.set(e,o);});});
+  const errs=[...em.entries()].sort((p,q)=>q[1].n-p[1].n||p[1].net-q[1].net);
+  const maxN=errs.length?errs[0][1].n:1;
+  $("dk-errs").innerHTML=errs.length?errs.map(([k,o])=>`<div class="dk-row" style="grid-template-columns:minmax(0,1.5fr) 30px minmax(0,1fr) 88px"><span class="k">${escapeHtml(k==="_none"?"Out of plan, no reason tagged":ERR_LBL[k]||k)}</span><span class="n">${o.n}×</span><div class="dk-bar"><i class="cost"><b style="width:${Math.round(o.n/maxN*100)}%"></b></i></div><span class="v ${o.net>0?"mint":o.net<0?"rose":""}">${fmtVal(o.net,sumR(o.ts))}</span></div>`).join(""):`<div class="dk-empty">${tg.length?"No out-of-plan trades in this period. That is the goal.":"Nothing yet. When you tag a trade NO, pick what broke — this list ranks your mistakes by how often they happen and what they cost."}</div>`;
+  // triggers
+  const isProp=t=>acctById(tAcct(t)).kind==="prop";
+  const G=[
+    ["Sequence",[["First trade of the day",x=>x.prev==="first"],["After a win",x=>x.prev==="win"],["After a loss",x=>x.prev==="loss"],["3rd trade of the day or later",x=>x.nth>=3]]],
+    ["Account",[["Personal account",x=>!isProp(x.t)],["Prop · Phase 1",x=>isProp(x.t)&&x.t.phase==="1"],["Prop · Phase 2",x=>isProp(x.t)&&x.t.phase==="2"],["Prop · Funded",x=>isProp(x.t)&&x.t.phase==="funded"]]],
+    ["Check-in that day",[["Slept well (6+)",x=>x.ci&&x.ci.sleep>=6],["Slept badly (5 or less)",x=>x.ci&&x.ci.sleep<=5],["Red-flag mindset",x=>x.ci&&RED_MINDS.includes(x.ci.mind)],["No check-in",x=>!x.ci]]],
+    ["Emotion at entry",EMOS.map(e=>[e,x=>x.t.emotion===e]).concat([["Strong emotion (7+)",x=>x.t.emotion&&x.t.intensity>=7]])],
+    ["Setup grade",GRADES.map(g=>["Grade "+g,x=>x.t.grade===g])],
+    ["Session",["Asia","London","Overlap","New York"].map(s=>[s,x=>x.t.session===s])]
+  ];
+  let html="",worst=null;const overall=rate;
+  for(const[title,rows]of G){
+    const rs=rows.map(([l,f])=>[l,grpStat(ctx.filter(f))]).filter(([,g])=>g.n>0);
+    if(rs.length<1||(rs.length===1&&title!=="Setup grade"))continue;
+    html+=`<div class="dk-grp">${title}</div>`+rs.map(([l,g])=>dkRow(l,g,g.tg<5)).join("");
+    rs.forEach(([l,g])=>{if(g.tg>=3&&g.rate!==null&&overall!==null&&overall-g.rate>=.15&&(!worst||g.rate<worst.g.rate))worst={l,g,title};});
+  }
+  $("dk-trig").innerHTML=html||`<div class="dk-empty">Tag a few trades and this fills in: discipline after a win vs after a loss, Phase 1 vs Phase 2, good sleep vs bad, by emotion, setup grade and session.</div>`;
+  // diagnosis
+  const D=[];const per=dkScope==="30"?" in the last 30 days":"";
+  if(tg.length<5){D.push(["",`<b>${tg.length} tagged trade${tg.length===1?"":"s"}${per}.</b> The diagnosis needs about 20 to be reliable. Tag every trade right after it closes — YES or NO, and if NO, what broke.`]);}
+  else{
+    D.push([outNet<0?"bad":"",`In plan: <b>${fmtMoney(inNet)}</b> over ${inp.length} trade${inp.length===1?"":"s"}. Out of plan: <b>${fmtMoney(outNet)}</b> over ${outp.length}${per}.`]);
+    if(inNet>0&&outNet<0)D.push(["bad",`The strategy pays; the losses come from the trades outside it. Without them you'd be at <b>${fmtMoney(inNet)}</b> instead of <b>${fmtMoney(inNet+outNet)}</b>.`]);
+    else if(inNet<=0&&inp.length>=10)D.push(["bad",`Even in-plan trades are flat or negative here. Check execution and setup grades too — not everything is psychology.`]);
+    else if(outp.length===0)D.push(["",`Every tagged trade followed the plan. The work now is keeping the streak.`]);
+    const top=errs.find(([k])=>k!=="_none");
+    if(top)D.push(["bad",`Most frequent break: <b>${escapeHtml(ERR_LBL[top[0]]||top[0])}</b> — ${top[1].n}×, ${fmtMoney(top[1].net)}. That's the one to build a rule against first.`]);
+    if(worst)D.push(["bad",`<b>${escapeHtml(worst.l)}</b>: only ${Math.round(worst.g.rate*100)}% in plan, against ${Math.round(overall*100)}% overall. That's your main trigger.`]);
+    const noCi=ctx.filter(x=>!x.ci).length;if(ctx.length&&noCi/ctx.length>.5)D.push(["",`${noCi} of ${ctx.length} trades were taken on days without a check-in, so sleep and mindset can't be linked yet.`]);
+    if(tg.length<20)D.push(["",`Sample: ${tg.length} tagged trades. Treat these as leads until you reach 20.`]);
+  }
+  $("dk-diag").innerHTML=D.map(([c,t])=>`<li class="${c}">${t}</li>`).join("");
+  // untagged queue
+  const un=VT().filter(needsTag).sort(chrono).reverse();
+  $("ut-count").textContent=un.length?`${un.length} trade${un.length===1?"":"s"} without psychology tags`:"All trades tagged";
+  const cut=new Date();cut.setDate(cut.getDate()-7);const cs=ymd(cut);
+  $("ut-skip").hidden=!un.some(t=>t.date<cs);
+  const showAcct=a==="all"&&accounts().length>1;
+  $("ut-list").innerHTML=un.length?un.slice(0,15).map(t=>`<div class="ut-row"><span class="d">${t.date}</span><span class="s">${t.dir==="sell"?"SELL":"BUY"} ${escapeHtml(t.symbol||"XAUUSD")}${t.lot?" · "+fmtNum(t.lot,2):""}${t.session?" · "+escapeHtml(t.session):""}${showAcct?" · "+escapeHtml(acctById(tAcct(t)).name):""}</span><span class="p" style="color:${t.pnl>0?"var(--mint)":t.pnl<0?"var(--rose)":"var(--ink-3)"}">${(t.pnl>=0?"+":"")+fmtMoney(t.pnl)}</span><button class="btn tiny mint" data-tag="${t.id}" type="button">Tag</button></div>`).join("")+(un.length>15?`<div class="dk-empty">+ ${un.length-15} more</div>`:""):`<div class="dk-empty">Nothing waiting. Tag each trade the moment it closes and this stays empty.</div>`;
+}
+async function skipOldUntagged(){
+  const cut=new Date();cut.setDate(cut.getDate()-7);const cs=ymd(cut);
+  const l=VT().filter(t=>needsTag(t)&&t.date<cs);if(!l.length)return;
+  if(!confirm(`Skip ${l.length} trade${l.length===1?"":"s"} older than 7 days?\n\nYou probably don't remember what you felt on them, and a guessed tag pollutes the diagnosis. They stay in the journal and the stats — they just leave the "to tag" list.`))return;
+  l.forEach(t=>{t.psySkip=true;});saveLocal();
+  if(db){try{for(const t of l){const{id,...r}=t;await db.doc("trades/"+id).set(r);}}catch(e){}}
+  render();toast(`${l.length} older trade${l.length===1?"":"s"} skipped`);
+}
+function bindDiscipline(){
+  $("acct-sel").addEventListener("change",e=>setView(e.target.value));
+  $("acct-manage").addEventListener("click",openAccounts);
+  $("acct-close-x").addEventListener("click",closeAccounts);
+  $("acct-done").addEventListener("click",closeAccounts);
+  $("acct-modal").addEventListener("click",e=>{if(e.target===$("acct-modal"))closeAccounts();});
+  ["ac-name","ac-size"].forEach(id=>$(id).addEventListener("input",acFormSync));
+  $("ac-kind").addEventListener("change",acFormSync);
+  $("ac-add").addEventListener("click",acctAdd);
+  $("ac-ea").addEventListener("change",e=>{state.settings.eaAcct=e.target.value;saveSettings();});
+  $("acct-list").addEventListener("change",e=>{const el=e.target.closest("[data-ac]");if(el)acctEdit(el.dataset.ac,el.dataset.k,el.value);});
+  $("acct-list").addEventListener("click",e=>{const b=e.target.closest("[data-ac-del]");if(b)acctDelete(b.dataset.acDel);});
+  $("at-acct").addEventListener("change",()=>atAcctSync(false));
+  $("at-plan-group").addEventListener("click",e=>{const b=e.target.closest("[data-plan]");if(!b)return;const v=b.dataset.plan==="yes";psy.plan=psy.plan===v?null:v;if(psy.plan!==false)psy.errs.clear();psyRender();});
+  $("at-errs").addEventListener("click",e=>{const b=e.target.closest("[data-err]");if(!b)return;const k=b.dataset.err;psy.errs.has(k)?psy.errs.delete(k):psy.errs.add(k);psyRender();});
+  $("at-grade").addEventListener("click",e=>{const b=e.target.closest("[data-grade]");if(!b)return;psy.grade=psy.grade===b.dataset.grade?null:b.dataset.grade;psyRender();});
+  $("at-emo").addEventListener("click",e=>{const b=e.target.closest("[data-emo]");if(!b)return;psy.emo=psy.emo===b.dataset.emo?null:b.dataset.emo;psyRender();});
+  $("at-int").addEventListener("input",()=>{$("at-int-v").textContent=$("at-int").value;});
+  ["sleep","energy","mood"].forEach(k=>$("ci-"+k).addEventListener("input",ciRenderForm));
+  $("ci-mind").addEventListener("click",e=>{const b=e.target.closest("[data-mind]");if(!b)return;ciMind=ciMind===b.dataset.mind?null:b.dataset.mind;ciRenderForm();});
+  $("ci-save").addEventListener("click",saveCheckin);
+  $("dk-scope").addEventListener("click",e=>{const b=e.target.closest("[data-dk]");if(!b)return;dkScope=b.dataset.dk;try{localStorage.setItem("golddesk_dk",dkScope);}catch(e){}renderDiscipline();});
+  $("ut-list").addEventListener("click",e=>{const b=e.target.closest("[data-tag]");if(b)openEditTrade(b.dataset.tag);});
+  $("ut-skip").addEventListener("click",skipOldUntagged);
+  document.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(b)switchPage(b.dataset.go);});
+}
+
 /* ─── events ─── */
 function bindEvents(){
+  bindDiscipline();
   ["entry","sl","tp"].forEach(id=>{$(id).addEventListener("input",renderCalc);});
   $("account").addEventListener("input",()=>{
     const v=parseFloat($("account").value);
     if(isFinite(v)&&v>=0){
       state.settings.account=v;
-      state.settings.seed=v;
-      $("seed-input").value=v;
+      if(seedIsMain()){state.settings.seed=v;$("seed-input").value=v;}
     }
     scheduleSave();renderCalc();renderBalance();renderSparkline();renderRules();
   });
@@ -2106,9 +2597,9 @@ function bindEvents(){
   $("seed-input").addEventListener("input",()=>{
     const v=parseFloat($("seed-input").value);
     if(isFinite(v)&&v>=0){
-      state.settings.seed=v;
-      state.settings.account=v;
-      $("account").value=v;
+      const a=activeAcct();
+      if(a!=="main"&&a!=="all"){const l=(state.settings.accounts||[]).slice();const i=l.findIndex(x=>x.id===a);if(i>=0&&v>0){l[i]=Object.assign({},l[i],{size:v});state.settings.accounts=l;}}
+      else if(seedIsMain()){state.settings.seed=v;state.settings.account=v;$("account").value=v;}
     }
     scheduleSave();renderBalance();renderSparkline();renderCalc();renderRules();
   });
